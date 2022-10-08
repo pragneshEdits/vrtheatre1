@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+    <script src="Rotation.js"></script>
+
+    <style type="text/css">
+      h1{
+          color:white;
+          text-align: center;
+          scale: 2;
+          position:"2 5 -15";   
+          height:"1";
+          width:"25";
+          text-shadow: 4px 4px black;
+      }
+  </style>
+</head>
+
+<body>
+    <a-scene>
+
+      <a-assets>
+        <a-asset-item id="building" src="./assets/cinema_building/scene.gltf"></a-asset-item>
+        <img id="image" src="./intro.jpeg"/>
+      </a-assets>
+
+      <a-sky
+        src="./assets/background2.jpg"
+        radius="100"
+      ></a-sky>
+      <!----
+      <a-plane src="#image" height="55" width="110" position="1 1 -30"
+
+      ></a-plane>
+      --->
+      <a-entity
+        gltf-model="#building"
+        scale="4 5 5"
+        position="-330 -15 -40"
+        rotate-scene
+      ></a-entity>
+        
+      <a-camera id="camera" wasd-controls="enabled:true;">
+
+        <a-entity
+        camera="active: true"
+        look-controls
+        position="0 10 25"
+      ></a-entity>
+      ></a-entity>
+    </a-scene>
+</body>
+</html>
